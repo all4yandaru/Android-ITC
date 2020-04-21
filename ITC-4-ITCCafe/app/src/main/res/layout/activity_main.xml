@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:id="@+id/vg_top"
+        android:layout_above="@+id/vg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ITC CAFE"
+                android:textSize="60dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0277BD"
+                android:padding="10dp"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_makanan"
+                    android:layout_width="180dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/makanan" />
+
+                <TextView
+                    android:id="@+id/tv_makanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_makanan"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="Bubur Ayam"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_deskripsimakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_makanan"
+                    android:layout_toRightOf="@id/iv_makanan"
+                    android:maxLines="4"
+                    android:minLines="4"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tv_hargamakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tv_deskripsimakanan"
+                    android:layout_toRightOf="@id/iv_makanan"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="Rp 10.000"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_tambahmakanan"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="+" />
+
+                <TextView
+                    android:id="@+id/tv_jumlahmakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_toLeftOf="@id/btn_tambahmakanan"
+                    android:paddingBottom="9dp"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_kurangmakanan"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/tv_jumlahmakanan"
+                    android:layout_alignParentBottom="true"
+                    android:text="-" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0277BD"
+                android:padding="10dp"
+                android:layout_marginVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_minuman"
+                    android:layout_width="180dp"
+                    android:layout_height="200dp"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/minuman" />
+
+                <TextView
+                    android:id="@+id/tv_minuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_minuman"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="Jus Bubur Ayam"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_deskripsiminuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_minuman"
+                    android:layout_toRightOf="@id/iv_minuman"
+                    android:maxLines="4"
+                    android:minLines="4"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tv_hargaminuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tv_deskripsiminuman"
+                    android:layout_toRightOf="@id/iv_minuman"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:text="Rp 5.000"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_tambahminuman"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="+" />
+
+                <TextView
+                    android:id="@+id/tv_jumlahminuman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginHorizontal="4dp"
+                    android:layout_toLeftOf="@id/btn_tambahminuman"
+                    android:paddingBottom="9dp"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btn_kurangminuman"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/tv_jumlahminuman"
+                    android:layout_alignParentBottom="true"
+                    android:text="-" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/vg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#1565C0"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_harga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Rp.0"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_purchased"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_buy"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="Buy" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:text="Reset" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
