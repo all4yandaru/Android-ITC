@@ -33,12 +33,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(getApplicationContext(), Main2Activity.class);
 
                 Mahasiswa mhs = new Mahasiswa("Fulan", nim);
+                mhs.setContact("082136564484");
 
                 if (nim.equals("123180054")){
                     mhs = new Mahasiswa("Allya", nim);
+                    mhs.setContact("087700049687");
                 }
                 else if (nim.equals("123180053")){
                     mhs = new Mahasiswa("Pak RW", nim);
+                    mhs.setContact("012345678910");
                 }
                 else {
                     nim = "1231800xx";

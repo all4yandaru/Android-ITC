@@ -18,4 +18,13 @@
         android:layout_marginTop="20dp"
         />
 
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_call_24"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        />
+
 </LinearLayout>
