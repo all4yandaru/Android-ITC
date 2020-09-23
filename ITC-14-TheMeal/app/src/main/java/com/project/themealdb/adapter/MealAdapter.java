@@ -1,5 +1,6 @@
 package com.project.themealdb.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.project.themealdb.MealsDetail;
 import com.project.themealdb.R;
 import com.project.themealdb.model.Meal;
 import com.squareup.picasso.Picasso;
@@ -56,6 +58,15 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
             tvMeal.setText(meal.getStrMeal());
             tvCategory.setText(meal.getStrCategory());
             Picasso.get().load(meal.getStrMealThumb()).into(ivImage);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(itemView.getContext(), MealsDetail.class);
+                    i.putExtra(MealsDetail.EXTRA_PARCEL, meal);
+                    itemView.getContext().startActivity(i);
+                }
+            });
         }
     }
 }

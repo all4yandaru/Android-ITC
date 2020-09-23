@@ -2,9 +2,9 @@ package com.project.themealdb.service;
 
 import com.project.themealdb.ApiListener;
 import com.project.themealdb.model.Meal;
+import com.project.themealdb.model.SearchMealResponse;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,19 +29,37 @@ public class TheMealAPI {
     }
 
     public void getAllMeals(final ApiListener<ArrayList<Meal>> listener){
-        String letter = "b";
-        getAPI().getMeals(letter).enqueue(new Callback<ArrayList<Meal>>() {
+        getAPI().getMeals().enqueue(new Callback<SearchMealResponse>() {
             @Override
-            public void onResponse(Call<ArrayList<Meal>> call, Response<ArrayList<Meal>> response) {
-                ArrayList<Meal> listMeal = response.body();
+            public void onResponse(Call<SearchMealResponse> call, Response<SearchMealResponse> response) {
+                SearchMealResponse listMeal = response.body();
                 if (listMeal != null){
-                    listener.onSuccess(listMeal);
+                    listener.onSuccess(listMeal.getMeals());
                 }
             }
 
             @Override
-            public void onFailure(Call<ArrayList<Meal>> call, Throwable t) {
+            public void onFailure(Call<SearchMealResponse> call, Throwable t) {
                 listener.onFailed(t.getMessage());
+            }
+        });
+    }
+
+    public void getMealsDetail(final ApiListener<Meal> listener, String detail){
+        String detailMeal = detail;
+        getAPI().getMealsDetail(detailMeal).enqueue(new Callback<SearchMealResponse>() {
+            @Override
+            public void onResponse(Call<SearchMealResponse> call, Response<SearchMealResponse> response) {
+                SearchMealResponse mealDetail = response.body();
+                if (mealDetail != null){
+                    Meal detail = mealDetail.getMeals().get(0);
+                    listener.onSuccess(detail);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SearchMealResponse> call, Throwable t) {
+
             }
         });
     }

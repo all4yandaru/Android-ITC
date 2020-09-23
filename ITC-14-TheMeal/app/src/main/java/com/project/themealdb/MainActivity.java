@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         theMealAPI.getAllMeals(apiListener);
     }
 
-    ApiListener<ArrayList<Meal>> apiListener =new ApiListener<ArrayList<Meal>>() {
+    ApiListener<ArrayList<Meal>> apiListener = new ApiListener<ArrayList<Meal>>() {
         @Override
         public void onSuccess(ArrayList<Meal> meals) {
             listMeal.addAll(meals);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFailed(String msg) {
-            Log.d("EROR Api", msg);
+            Log.d("ERROR Api", msg);
         }
     };
 }
